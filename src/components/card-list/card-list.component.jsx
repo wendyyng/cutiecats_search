@@ -1,23 +1,17 @@
-import { Component } from 'react';
 import './card-list.styles.css'
 import Card from '../card/card.component'
+import { v4 as uuidv4 } from 'uuid';
 
-class CardList extends Component {
-    
-    render(){
-        const { monsters } = this.props;
+const CardList= ({monsters}) => {
         return (
-            <div className='card-list'>
+            <div className='card-list' key={uuidv4()} >
                 {monsters.map((monster) => {
-                    const { username, email, id } = monster;
                     return(
-                    <Card username={username} email={email} id={id}/>
-
+                    <Card monster={monster} key={monster.id} />
                     )
                     })}
             </div>
         )
-    }
 }
 
 export default CardList;
