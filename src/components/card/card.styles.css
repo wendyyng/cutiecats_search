@@ -12,7 +12,7 @@
     transition: transform 0.25s ease-out;
     box-shadow: 0.5rem 0.5rem black, -0.5rem -0.5rem #dce0dc;
     margin: 5px;
-    width: 200px
+    width: 230px
   }
   
   .card-container:hover {

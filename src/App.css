@@ -10,6 +10,16 @@ body {
 .app-title {
   margin-top: 75px;
   margin-bottom: 50px;
-  font-size: 75px;
+  font-size: 90px;
   font-family: 'Cute Font', cursive;
+  position: relative;
+}
+
+video {
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
