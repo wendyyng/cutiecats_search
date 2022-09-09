@@ -48,11 +48,14 @@ onSearchChange = (event) => {
     return (
       <>
       <div className="App">
+        <div className="container mt-4">
+          <h1 className="app-title text-bold">CutieCats Search🐈</h1>
         <SearchBox 
         onChangeHandler={onSearchChange} 
-        placeholder="Search Monsters" 
+        placeholder="Search CutieCats" 
         className="search-box"
         />
+        </div>
         <CardList 
         monsters={filteredMonsters}
         />
