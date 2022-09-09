@@ -1,9 +1,11 @@
 footer {
     background-color: #050505;
-    position: relative;
+    position: fixed;
     display: block;
     margin-top: 1em;
-    padding-top: 0.4em
+    padding-top: 0.4em;
+    bottom: 0;
+    width: 100%;
   }
 
 footer .wrapper {

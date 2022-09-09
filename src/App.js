@@ -8,22 +8,22 @@ import video from "./videos/Colorful-18899.mp4"
 const App = () => {
 
   const [searchField, setSearchField] = useState('')
-  const [monsters, setMonsters] = useState([]);
-  const [filteredMonsters, setFilteredMonsters] = useState(monsters)
+  const [cats, setCats] = useState([]);
+  const [filteredCats, setFilteredCats] = useState(cats)
 
   useEffect(() => {
     fetch('https://jsonplaceholder.typicode.com/users')
     .then(response => 
       response.json())
-    .then(users => setMonsters(users))
+    .then(users => setCats(users))
   }, [])
 
   useEffect(() => {
-    const newFilteredMonsters = monsters.filter((monster) => {
-      return monster.username.toLocaleLowerCase().includes(searchField);
+    const newFilteredCats = cats.filter((cat) => {
+      return cat.username.toLocaleLowerCase().includes(searchField);
     });
-    setFilteredMonsters(newFilteredMonsters);
-  }, [monsters, searchField])
+    setFilteredCats(newFilteredCats);
+  }, [cats, searchField])
 
 
   const onSearchChange = (event) => {
@@ -48,7 +48,7 @@ const App = () => {
       />
       </div>
       <CardList 
-      monsters={filteredMonsters}
+      cats={filteredCats}
       />
       <Footer />
     </div>
