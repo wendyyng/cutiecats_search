@@ -1,6 +1,6 @@
 footer {
     background-color: #050505;
-    position: fixed;
+    position: relative;
     display: block;
     margin-top: 1em;
     padding-top: 0.4em;
