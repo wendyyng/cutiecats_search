@@ -12,7 +12,6 @@ A responsive React app that generates cat cards with the names and emails fetche
 - JavaScript
 - HTML
 - CSS
-- JSONPlaceholder REST API 
 
 ## Screenshot
 ![image](https://user-images.githubusercontent.com/71687298/189562835-6921ed7f-1388-438b-ac81-79f767e0dcd6.png)
