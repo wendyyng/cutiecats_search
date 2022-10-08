@@ -8,7 +8,7 @@ A responsive React app that generates cat cards with the names and emails fetche
 ## Tech Stack
 
 - React
-- JSX
+- TypeScript
 - JavaScript
 - HTML
 - CSS
