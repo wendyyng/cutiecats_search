@@ -1,6 +1,11 @@
 import './card.styles.css'
+import { Cat } from '../../App'
 
-const Card = ({cat}) =>  {
+type CardProps = {
+    cat: Cat;
+}
+
+const Card = ({cat}: CardProps) =>  {
     const { username, id, email} = cat
         return (
             <div className='card-container' key={id}>

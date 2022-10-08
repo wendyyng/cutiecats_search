@@ -1,8 +1,13 @@
 import './card-list.styles.css'
 import Card from '../card/card.component'
 import { v4 as uuidv4 } from 'uuid';
+import { Cat } from '../../App';
 
-const CardList= ({cats}) => {
+type CardListProps = {
+    cats: Cat[];
+}
+
+const CardList= ({cats}: CardListProps) => {
         return (
             <div className='card-list' key={uuidv4()} >
                 {cats.map((cat) => {
