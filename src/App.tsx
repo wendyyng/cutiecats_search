@@ -1,21 +1,37 @@
 import CardList from './components/card-list/card-list.component';
 import SearchBox from './components/search-box/search-box.component';
 import Footer from './components/footer/footer.component'
-import {useState, useEffect } from 'react'
+import {useState, useEffect, ChangeEvent } from 'react'
 import './App.css';
 import video from "./videos/Colorful-18899.mp4"
+
+import { getData } from './utils/data.utils'
+
+export type Cat = {
+  id: string;
+  username: string;
+  email: string;
+}
 
 const App = () => {
 
   const [searchField, setSearchField] = useState('')
-  const [cats, setCats] = useState([]);
+  const [cats, setCats] = useState<Cat[]>([]);
   const [filteredCats, setFilteredCats] = useState(cats)
 
   useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/users')
-    .then(response => 
-      response.json())
-    .then(users => setCats(users))
+    // fetch('https://jsonplaceholder.typicode.com/users')
+    // .then(response => 
+    //   response.json())
+    // .then(users => setCats(users))
+    const fetchUsers = async () => {
+      //A promise with a result value of a Cat array
+      const users = await getData<Cat[]>('https://jsonplaceholder.typicode.com/users')
+      //type never: opposite of any 
+      //force me to give a type
+      setCats(users);
+    }
+    fetchUsers();
   }, [])
 
   useEffect(() => {
@@ -25,8 +41,8 @@ const App = () => {
     setFilteredCats(newFilteredCats);
   }, [cats, searchField])
 
-
-  const onSearchChange = (event) => {
+  //void , because no explicit returns inside the function itself
+  const onSearchChange = (event: ChangeEvent<HTMLInputElement>): void => {
     console.log(event.target.value)
     
     const searchFieldString = event.target.value.toLocaleLowerCase();
